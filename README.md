@@ -39,7 +39,6 @@
 다이아몬드가 분실되면 보험사는 고객이 신고한 다이아몬드가 분실된 다이아몬드라는 사실을 원장에 올립니다. 해당 다이아몬드의 Owner는 고객에게 분실보험금을 지급한 보험사로 변경되기 때문에, 거짓 분실로 인한 보험 사기를 방지할 수 있습니다.  <br>
 
 ## Installing
-
 ### 1. 파일을 클론합니다.
 ```
 git clone https://github.com/blockchain207/project_dia.git
@@ -60,13 +59,25 @@ node registerUser.js
 
 
 ## Application scenario
-![sub](https://user-images.githubusercontent.com/51254582/64236585-a631ab00-cf35-11e9-82a5-962a94658fa3.png)
-1) 보석을 도난당한 사용자가 보험사에 도난여부 신고
-2) 보험사에서 고객에게 분실보험금 지급 및 원장에 도난여부 트랜잭션 등록
-3) 사용자가 요청한 정보 원장에 반영 (소유자 확인/변경)
-4) 보석을 훔친 도둑이 보석상에게 훔친 보석을 팔려고 시도
-5) 보석상은 Headquater에게 해당 보석의 Owner조회
-6) 보석상에게 원장내의 트랜잭션에 기록된 정보를 제공함으로써 분실된 보석이라는 사실 확인가능
+![시나리오](https://user-images.githubusercontent.com/51254582/64939737-f812f300-d89c-11e9-8edf-72a8f050b22a.png)
+### 1) 제조사에서 다이아몬드를 등록
+```
+node invoke.js
+```
+### 2,3) 보석을 도난당한 고객이 보험사에 도난여부 신고 -> 보험사는 원장에 도난여부 트랜잭션 등록
+```
+node invokeLost.js
+```
+### 5,6) 보석을 훔친 도둑이 보석상에게 훔친 보석을 팔려고 시도 -> 보석상은 해당 보석의 Owner조회
+```
+node query.js
+```
+### 7) 고객끼리 보석거래시 보증서의 Owner변경여부 트랜잭션 등록 및 전체정보조회
+```
+node invokeAlter.js
+node queryAll.js
+```
+
 
 ## references
 * HyperledgerFabric Example - fabcar
