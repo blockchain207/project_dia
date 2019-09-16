@@ -67,3 +67,6 @@ node registerUser.js
 4) 보석을 훔친 도둑이 보석상에게 훔친 보석을 팔려고 시도
 5) 보석상은 Headquater에게 해당 보석의 Owner조회
 6) 보석상에게 원장내의 트랜잭션에 기록된 정보를 제공함으로써 분실된 보석이라는 사실 확인가능
+
+## references
+* HyperledgerFabric Example - fabcar
