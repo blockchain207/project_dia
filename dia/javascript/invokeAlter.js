@@ -36,8 +36,7 @@ async function main() {
         const contract = network.getContract('dia');
 
         // Submit the specified transaction.
-        // createDia transaction - requires 5 argument, ex: ('createDia', 'Dia12', 'Honda', 'Accord', 'Black', 'Tom')
-        // changeDiaOwner transaction - requires 2 args , ex: ('changeDiaOwner', 'Dia10', 'Dave')
+        // changeDiaOwner transaction - requires 2 args , ex: ('changeDiaOwner', 'Dia12', 'Dave')
         await contract.submitTransaction('changeDiaOwner', 'Dia12', 'Hyun');
         console.log('Transaction has been submitted');
 
