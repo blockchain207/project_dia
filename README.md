@@ -39,6 +39,28 @@
 다이아몬드가 분실되면 보험사는 고객이 신고한 다이아몬드가 분실된 다이아몬드라는 사실을 원장에 올립니다. 해당 다이아몬드의 Owner는 고객에게 분실보험금을 지급한 보험사로 변경되기 때문에, 거짓 분실로 인한 보험 사기를 방지할 수 있습니다.  <br><br><br>
 
 
+## Add chaincode function: lostDia
+```go
+func (s *SmartContract) lostDia(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
+
+        if len(args) != 1 {
+                return shim.Error("Incorrect number of arguments. Expecting 1")
+        }
+                                                                                                                   diaAsBytes, _ := APIstub.GetState(args[0])
+        dia := Dia{}
+
+        json.Unmarshal(diaAsBytes, &dia)
+        if dia.Lost == false {
+                dia.Lost = true
+                dia.Owner = "Insure Co"
+        }
+                                                                                                                   diaAsBytes, _ = json.Marshal(dia)
+        APIstub.PutState(args[0], diaAsBytes)                                                             
+        
+        return shim.Success(nil)
+}
+```
+
 ## Installing
 ### 1. 파일을 클론합니다.
 ```
@@ -86,7 +108,7 @@ node queryAll.js
 ```
 node invokeLost.js
 ```
-> Lost여부가 false에서 true로 바뀌고, Owner또한 기존 사용자에서 보험사(Insure Co)로 변경
+> Lost여부가 false에서 true로 바뀌고, Owner또한 기존 주인(Hyperdia)에서 보험사(Insure Co)로 변경
 
 ![invokeLost](https://user-images.githubusercontent.com/51254582/65004942-2a722e00-d939-11e9-8523-cb8a18a2461e.PNG)
 ### 6,7) 보석을 훔친 도둑이 보석상에게 훔친 보석을 팔려고 시도 -> 보석상은 해당 보석(Dia10)의 Owner조회
