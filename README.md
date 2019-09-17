@@ -57,38 +57,48 @@ npm install
 node enrollAdmin.js
 node registerUser.js
 ```
-> 이후 아래 이미지와 같이 연결됬다는 콘솔을 확인합니다.
+> 이후 아래 이미지와 같이 연결되었다는 콘솔을 확인합니다.
 
 ![createKey](https://user-images.githubusercontent.com/51254582/65002642-d57dea00-d92f-11e9-9bc5-8688b1c4df60.PNG)
 
 
 ## Application scenario
-![시나리오](https://user-images.githubusercontent.com/51254582/64939737-f812f300-d89c-11e9-8edf-72a8f050b22a.png)
-### 1) 제조사에서 다이아몬드를 등록
+![scenario](https://user-images.githubusercontent.com/51254582/65004411-4248b280-d937-11e9-8933-265f1b4b1309.png)
+### 1) 제조사에서 다이아몬드(Dia12)를 등록
 ```
 node invoke.js
 ```
-> 아래 이미지와 같은 콘솔이 확인되어야 합니다.
+> {"carat":"1.67","clarity":"SI2","color":"F","lost":false,"owner":"Manufac Co"} 생성
 
-![invoke2](https://user-images.githubusercontent.com/51254582/65002947-26421280-d931-11e9-843e-eb25cc17ba4c.jpg)
-### 2,3) 보석을 도난당한 고객이 보험사에 도난여부 신고 -> 보험사는 원장에 도난여부 트랜잭션 등록
-```
-node invokeLost.js
-```
-### 5,6) 보석을 훔친 도둑이 보석상에게 훔친 보석을 팔려고 시도 -> 보석상은 해당 보석의 Owner조회
-```
-node query.js
-```
-> 위의 invokeLost.js에서 Lost여부가 false에서 true로 바뀌고, Owner또한 기존 사용자에서 보험사(Insure Co)로 변경되었기 때문에 조회결과  분실된 보석이라는 사실 확인가능
-
-![invokeLost](https://user-images.githubusercontent.com/51254582/65002711-1a098580-d930-11e9-857c-77c1cb40a84e.PNG)
-### 7) 고객끼리 보석거래시 보증서의 Owner변경여부 등록 및 전체정보조회
+![invoknoe2](https://user-images.githubusercontent.com/51254582/65002947-26421280-d931-11e9-843e-eb25cc17ba4c.jpg)
+### 2) 보석(Dia12)거래시 보증서의 Owner변경여부 등록 및 전체정보조회
 ```
 node invokeAlter.js
 node queryAll.js
 ```
+> Dia12의 Owner가 제조사(Manufac Co)에서 Hyperdia로 변경
+
+![invokeAlter](https://user-images.githubusercontent.com/51254582/65004741-71abef00-d938-11e9-9062-3c2846d23c86.PNG)
+> 전체조회
+
+![queryAll](https://user-images.githubusercontent.com/51254582/65005141-d3b92400-d939-11e9-8004-5c2c53700dc1.PNG)
+### 3,4) 보석을 도난당한 Dia12의 주인이 보험사에 도난여부 신고 -> 보험사는 원장에 도난여부 트랜잭션 등록
+```
+node invokeLost.js
+```
+> Lost여부가 false에서 true로 바뀌고, Owner또한 기존 사용자에서 보험사(Insure Co)로 변경
+
+![invokeLost](https://user-images.githubusercontent.com/51254582/65004942-2a722e00-d939-11e9-8523-cb8a18a2461e.PNG)
+### 6,7) 보석을 훔친 도둑이 보석상에게 훔친 보석을 팔려고 시도 -> 보석상은 해당 보석(Dia10)의 Owner조회
+```
+node query.js
+```
+> 위의 invokeLost.js에서 도난등록이 되었기 때문에 보석상은 조회를 통해 분실된 보석이라는 사실 확인가능
+
+![query](https://user-images.githubusercontent.com/51254582/65004946-2cd48800-d939-11e9-8d78-ff94ae25090b.PNG)
 
 
-## references
+
+## References
 * HyperledgerFabric Example - fabcar
 * 이승한,이요한,신태영 「실전! 하이퍼레저 패브릭」 (위키북스 해킹 & 보안 시리즈, 2019)
