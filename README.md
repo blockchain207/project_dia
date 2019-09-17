@@ -34,7 +34,7 @@
 
 
 ## Application Workflow
-![main](https://user-images.githubusercontent.com/51254582/64236400-4affb880-cf35-11e9-9c9f-87e73bdad362.png)
+![workflow](https://user-images.githubusercontent.com/51254582/65006008-cb161d00-d93c-11e9-9e56-c5718dcf88ba.png)
 * 제조사에서 다이아몬드 정보를 등록하거나 등록된 다이아몬드가 거래되어 Owner가 변경될 때마다 트랜잭션이 발생해 정보가 블록에 기록이 되기 때문에, 인증서의 위변조가 불가능하여 소비자 입장에서 더욱 신뢰성 높은 거래를 할 수 있다는 장점이 있습니다. <br>
 다이아몬드가 분실되면 보험사는 고객이 신고한 다이아몬드가 분실된 다이아몬드라는 사실을 원장에 올립니다. 해당 다이아몬드의 Owner는 고객에게 분실보험금을 지급한 보험사로 변경되기 때문에, 거짓 분실로 인한 보험 사기를 방지할 수 있습니다.  <br><br><br>
 
@@ -86,10 +86,11 @@ node registerUser.js
 > 이후 아래 이미지와 같이 연결되었다는 콘솔을 확인합니다.
 
 ![createKey](https://user-images.githubusercontent.com/51254582/65002642-d57dea00-d92f-11e9-9bc5-8688b1c4df60.PNG)
+<br>
 
 
 ## Application scenario
-![scenario](https://user-images.githubusercontent.com/51254582/65004411-4248b280-d937-11e9-8933-265f1b4b1309.png)
+![scenario](https://user-images.githubusercontent.com/51254582/65006011-ccdfe080-d93c-11e9-9c17-5e14230b1f14.png)
 ### 1) 제조사에서 다이아몬드(Dia12)를 등록
 ```
 node invoke.js
