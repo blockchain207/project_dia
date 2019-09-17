@@ -46,7 +46,8 @@ func (s *SmartContract) lostDia(APIstub shim.ChaincodeStubInterface, args []stri
         if len(args) != 1 {
                 return shim.Error("Incorrect number of arguments. Expecting 1")
         }
-                                                                                                                   diaAsBytes, _ := APIstub.GetState(args[0])
+        
+        diaAsBytes, _ := APIstub.GetState(args[0])
         dia := Dia{}
 
         json.Unmarshal(diaAsBytes, &dia)
@@ -54,12 +55,15 @@ func (s *SmartContract) lostDia(APIstub shim.ChaincodeStubInterface, args []stri
                 dia.Lost = true
                 dia.Owner = "Insure Co"
         }
-                                                                                                                   diaAsBytes, _ = json.Marshal(dia)
+        
+        diaAsBytes, _ = json.Marshal(dia)
         APIstub.PutState(args[0], diaAsBytes)                                                             
         
         return shim.Success(nil)
 }
 ```
+<br><br><br>
+
 
 ## Installing
 ### 1. 파일을 클론합니다.
