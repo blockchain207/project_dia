@@ -39,6 +39,8 @@
 다이아몬드가 분실되면 보험사는 고객이 신고한 다이아몬드가 분실된 다이아몬드라는 사실을 원장에 올립니다. 해당 다이아몬드의 Owner는 고객에게 분실보험금을 지급한 보험사로 변경되기 때문에, 거짓 분실로 인한 보험 사기를 방지할 수 있습니다.  <br>
 
 
+
+
 ## Installing
 ### 1. 파일을 클론합니다.
 ```
@@ -58,6 +60,7 @@ node enrollAdmin.js
 node registerUser.js
 ```
 > 이후 아래 이미지와 같이 연결됬다는 콘솔을 확인합니다.
+
 ![createKey](https://user-images.githubusercontent.com/51254582/65002642-d57dea00-d92f-11e9-9bc5-8688b1c4df60.PNG)
 
 
@@ -68,6 +71,7 @@ node registerUser.js
 node invoke.js
 ```
 > 아래 이미지와 같은 콘솔이 확인되어야 합니다.
+
 ![invoke2](https://user-images.githubusercontent.com/51254582/65002947-26421280-d931-11e9-843e-eb25cc17ba4c.jpg)
 ### 2,3) 보석을 도난당한 고객이 보험사에 도난여부 신고 -> 보험사는 원장에 도난여부 트랜잭션 등록
 ```
@@ -78,6 +82,7 @@ node invokeLost.js
 node query.js
 ```
 > 위 invokeLost.js에서 Lost여부가 false에서 true로 바뀌고, Owner또한 기존 사용자에서 보험사(Insure Co)로 변경되었기 때문에 조회결과  분실된 보석이라는 사실 확인가능
+
 ![invokeLost](https://user-images.githubusercontent.com/51254582/65002711-1a098580-d930-11e9-857c-77c1cb40a84e.PNG)
 ### 7) 고객끼리 보석거래시 보증서의 Owner변경여부 등록 및 전체정보조회
 ```
