@@ -62,7 +62,7 @@ func (s *SmartContract) lostDia(APIstub shim.ChaincodeStubInterface, args []stri
         return shim.Success(nil)
 }
 ```
-<br><br><br>
+<br>
 
 
 ## Installing
