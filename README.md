@@ -77,7 +77,7 @@ node invokeLost.js
 ```
 node query.js
 ```
-> Lost여부가 false에서 true로 바뀌고, Owner또한 기존 사용자에서 보험사(Insure Co)로 변경되었기 때문에 조회결과  분실된 보석이라는 사실 확인가능
+> 위 invokeLost.js에서 Lost여부가 false에서 true로 바뀌고, Owner또한 기존 사용자에서 보험사(Insure Co)로 변경되었기 때문에 조회결과  분실된 보석이라는 사실 확인가능
 ![invokeLost](https://user-images.githubusercontent.com/51254582/65002711-1a098580-d930-11e9-857c-77c1cb40a84e.PNG)
 ### 7) 고객끼리 보석거래시 보증서의 Owner변경여부 등록 및 전체정보조회
 ```
