@@ -89,7 +89,7 @@ node registerUser.js
 <br>
 
 
-## Application scenario
+## Application Scenario
 ![scenario](https://user-images.githubusercontent.com/51254582/65006011-ccdfe080-d93c-11e9-9c17-5e14230b1f14.png)
 ### 1) 제조사에서 다이아몬드(Dia12)를 등록
 ```
@@ -103,10 +103,10 @@ node invoke.js
 node invokeAlter.js
 node queryAll.js
 ```
-> Dia12의 Owner가 제조사(Manufac Co)에서 Hyperdia로 변경
+> invokeAlter: Dia12의 Owner가 제조사(Manufac Co)에서 Hyperdia로 변경
 
 ![invokeAlter](https://user-images.githubusercontent.com/51254582/65004741-71abef00-d938-11e9-9062-3c2846d23c86.PNG)
-> 전체조회
+> queryAll: 전체조회
 
 ![queryAll](https://user-images.githubusercontent.com/51254582/65005141-d3b92400-d939-11e9-8004-5c2c53700dc1.PNG)
 ### 3,4) 보석을 도난당한 Dia12의 주인이 보험사에 도난여부 신고 -> 보험사는 원장에 도난여부 트랜잭션 등록
